@@ -54,6 +54,7 @@ The InMemory Connector is about 80% ready.
     ✓ expression: A/b
     ✓ expression: A/b eq 1
     ✓ expression: A/b eq A/b
+    ✓ expression: (A/b eq B/a) or (B/c lt 4) and ((E add 2) gt B add A)
     ✓ expression: A/$count
     ✓ expression: A/$count eq 3
     ✓ expression: A/$count gt 2
