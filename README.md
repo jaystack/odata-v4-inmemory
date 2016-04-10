@@ -20,7 +20,7 @@ The InMemory connector can be safely used in IoT devices.
 
 ## Usage TS
 ```javascript
- import { createFilter } from 'odata-inmemory-connector'
+ import { createFilter } from 'odata-v4-inmemory'
 
  //example request:  GET /api/products?$filter=category/id eq 5 or color eq 'Red'
  app.get("/api/products", (req: Request, res: Response) => {
@@ -32,7 +32,7 @@ The InMemory connector can be safely used in IoT devices.
 
 ## Usage ES5
 ```javascript
- var createFilter = require('odata-inmemory-connector').createFilter
+ var createFilter = require('odata-inmemory').createFilter
 
  app.get("/api/products", function(req, res) {
    var data = getYourProductArray() //or similar :)
