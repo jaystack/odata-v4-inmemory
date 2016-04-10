@@ -1,7 +1,7 @@
 import { FilterVisitor } from './FilterVisitor'
-import { Parser } from '../node_modules/odata-v4-parser/lib/parser'
-import { Token } from '../node_modules/odata-v4-parser/lib/lexer'
-export { Token } from '../node_modules/odata-v4-parser/lib/lexer'
+import { Parser } from 'odata-v4-parser/lib/parser'
+import { Token } from 'odata-v4-parser/lib/lexer'
+export { Token } from 'odata-v4-parser/lib/lexer'
 
 interface ExpressionFunction {
   (entity: any): any

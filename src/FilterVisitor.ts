@@ -1,4 +1,4 @@
-import { TokenType, Token } from '../node_modules/odata-v4-parser/lib/lexer'
+import { TokenType, Token } from 'odata-v4-parser/lib/lexer'
 
 
 
