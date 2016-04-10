@@ -3,20 +3,26 @@
 Service OData v4 requests from an in memory data store.
 
 ## Synopsis
-The OData V4 InMemory Connector provides functionality to convert the varios OData expressions
+The OData V4 InMemory Connector provides functionality to convert the varios types of OData segments
 into runnable JavaScript functions, that you can execute over an inmemory graph of objects.
-
-This connector is useful to create high speed, standard compliant data sharing apis
-or can be used as a mock or swap-in for acceptance tests.
 
 In most cases servicing data from memory is not possible - in this case you can use the
 [OData V4 MongoDB Connector](https://github.com/jaystack/odata-server-example)
+
+The InMemory connector can be safely used in IoT devices.
+
+## Potential usage scenarios
+
+- Server: Create high speed, standard compliant data sharing apis
+- Server: Use as a mock or swap-in for acceptance tests in place of the mongodb connector
+- Client: use the OData syntax to define data queries or value returning expressions as strings (stored in a configuration) and compile and execute later as JS functions
 
 
 ## Usage TS
 ```javascript
  import { createFilter } from 'odata-inmemory-connector'
 
+ //example request:  GET /api/products?$filter=category/id eq 5 or color eq 'Red'
  app.get("/api/products", (req: Request, res: Response) => {
    const data = getYourProductArray() //or similar :)
    const filterFn = createFilter(req.query.$filter)
