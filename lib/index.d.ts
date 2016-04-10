@@ -1,5 +1,5 @@
-import { Token } from '../node_modules/odata-v4-parser/lib/lexer';
-export { Token } from '../node_modules/odata-v4-parser/lib/lexer';
+import { Token } from 'odata-v4-parser/lib/lexer';
+export { Token } from 'odata-v4-parser/lib/lexer';
 export interface FilterFunction {
     (entity: any): boolean;
 }
