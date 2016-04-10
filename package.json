@@ -1,0 +1,39 @@
+{
+  "name": "odata-inmemory-connector",
+  "version": "0.1.0",
+  "description": "Service OData requests from an inmemory data store",
+  "main": "lib/index.js",
+  "typings": "lib/index",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "tsc src/index.ts --outDir lib -d",
+    "pretest": "npm run build",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaystack/odata-inmemory-connector.git"
+  },
+  "keywords": [
+    "OData",
+    "server",
+    "V4",
+    "parser"
+  ],
+  "author": "JayStack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaystack/odata-inmemory-connector/issues"
+  },
+  "homepage": "https://github.com/jaystack/odata-inmemory-connector#readme",
+  "dependencies": {
+    "odata-v4-parser": "^0.1.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "typescript": "^1.8.9"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es5",
+    "declaration": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
