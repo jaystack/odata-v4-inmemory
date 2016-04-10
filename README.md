@@ -3,8 +3,15 @@
 Service OData v4 requests from an in memory data store.
 
 ## Synopsis
-The InMemory Connector provides functionality to convert the varios OData expressions
-into runnable JavaScript functions.
+The OData V4 InMemory Connector provides functionality to convert the varios OData expressions
+into runnable JavaScript functions, that you can execute over an inmemory graph of objects.
+
+This connector is useful to create high speed, standard compliant data sharing apis
+or can be used as a mock or swap-in for acceptance tests.
+
+In most cases servicing data from memory is not possible - in this case you can use the
+[OData V4 MongoDB Connector](https://github.com/jaystack/odata-server-example)
+
 
 ## Usage TS
 ```javascript
@@ -32,9 +39,15 @@ into runnable JavaScript functions.
 ## Supported OData segments
 
 
-**$filter**
+For now **$filter**, support for **$select** and **$expand** is next.
 
-## Supported expressions
+
+### Supported $filter expressions
+The [OData v4 Parser](https://www.npmjs.com/package/odata-v4-parser) layer supports 100% of the specification.
+The InMemory Connector is about 80% ready.
+
+*We are into creating a comprehensive feature availability chart for V1 release*
+
     ✓ expression: 1 eq 1
     ✓ expression: A eq 1
     ✓ expression: A
@@ -63,6 +76,6 @@ into runnable JavaScript functions.
     ✓ expression: substring('ABC', D) eq 'BC'
     ✓ expression: substring('ABC', 2) eq 'BC'
 
-### $filter
+
 
 
