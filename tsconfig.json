@@ -2,7 +2,8 @@
   "compilerOptions": {
     "sourceMap": true,
     "target": "es5",
-    "declaration": true
+    "declaration": true,
+    "outDir": "lib"
   },
   "exclude": [
     "node_modules"

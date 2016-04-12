@@ -27,7 +27,7 @@ export const ODataMethodMap = {
   tolower: v => v.toLowerCase(),
   toupper: v => v.toUpperCase(),
   trim: v => v.trim(),
-  concat: (v,i) => v.concat(i),
+  concat: (v,i) => typeof v == 'number' ? v.toString().concat(i) : v.concat(i),
   year: v => v.getFullYear(),
   month: v => v.getMonth() + 1,
   day: v => v.getDate(),
@@ -56,7 +56,6 @@ export class FilterVisitor implements VisitorMap {
       case TokenType.CollectionPathExpression:
       case TokenType.LambdaPredicateExpression:
       case TokenType.MemberExpression:
-      case TokenType.PropertyPathExpression:
       case TokenType.SingleNavigationExpression:
       case TokenType.CommonExpression:
       case TokenType.ArrayOrObject:
@@ -235,6 +234,18 @@ export class FilterVisitor implements VisitorMap {
     return a => method.apply(this, params.map(p => p(a)))
   }
 
+  protected VisitPropertyPathExpression(node: Token, context: any) {
+      if (node.value.name) {
+        return a => a[node.value.name]
+      }
+      if (node.value.current && node.value.next){
+          const current = this.Visit(node.value.current, context)
+          const next = this.Visit(node.value.next, context)
+          return a => next(current(a) || {})
+      }
+      return this.Visit(node.value, context);
+  }
+
   protected VisitODataIdentifier(node: Token, context: any) {
     if (node.value.name) {
       return a => a[node.value.name]
@@ -281,6 +292,3 @@ export class FilterVisitor implements VisitorMap {
     return a => -exp(a)
   }
 }
-
-
-

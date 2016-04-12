@@ -61,6 +61,7 @@ export declare class FilterVisitor implements VisitorMap {
     protected getLiteral(node: Token): any;
     protected VisitLiteral(node: Token, context: any): (a: any) => any;
     protected VisitMethodCallExpression(node: Token, context: any): (a: any) => any;
+    protected VisitPropertyPathExpression(node: Token, context: any): any;
     protected VisitODataIdentifier(node: Token, context: any): (a: any) => any;
     protected VisitIsOfExpression(node: Token, context: any): (a: any) => boolean;
     protected VisitOrExpression(node: Token, context: any): (a: any) => any;
