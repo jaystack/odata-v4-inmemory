@@ -7,7 +7,7 @@ The OData V4 InMemory Connector provides functionality to convert the varios typ
 into runnable JavaScript functions, that you can execute over an inmemory graph of objects.
 
 In most cases servicing data from memory is not possible - in this case you can use the
-[OData V4 MongoDB Connector](https://github.com/jaystack/odata-server-example)
+[OData V4 MongoDB Connector](https://github.com/jaystack/odata-v4-mongodb)
 
 The InMemory connector can be safely used in IoT devices.
 
@@ -153,9 +153,3 @@ The Connector is about 90% ready on filters. Except for date arithmetic, and geo
     - expression 5.1.1.4.30: geo.distance(A, B)
     - expression 5.1.1.4.31: geo.intersects(A, B)
     - expression 5.1.1.4.31: geo.length(A)
-
-
-
-
-
-
