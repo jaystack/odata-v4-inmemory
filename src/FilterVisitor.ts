@@ -265,6 +265,15 @@ export class FilterVisitor implements VisitorMap {
     var target = this.Visit(node.value.target, context)
     return a => target(a).constructor.name === type(a)
   }
+
+  protected VisitQualifiedEntityTypeName(node: Token, context: any) {
+    return a => this.Visit(node.value, context)(a);
+  }
+
+  protected VisitEntityTypeName(node: Token, context: any) {
+    return a => node.value.name;
+  }
+
   protected VisitOrExpression(node: Token, context: any) {
     var [left, right] = this.VisitBinaryExpression(node, context)
     return a => left(a) || right(a)
