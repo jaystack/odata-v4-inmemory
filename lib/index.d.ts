@@ -1,13 +1,9 @@
 import { Token } from 'odata-v4-parser/lib/lexer';
-export { Token } from 'odata-v4-parser/lib/lexer';
 export interface ExpressionFunction {
     (entity: any): any;
 }
 export interface FilterFunction {
     (entity: any): boolean;
-}
-export declare namespace infrastructure {
-    function createFilterAst(odataFilter: string): Token;
 }
 /**
  * Creates a filter function from an OData filter expression string
@@ -19,7 +15,8 @@ export declare namespace infrastructure {
  * console.log(items.filter(filterFn))
  * >> [{Size:4, Name:'Childrens book'}]
  */
-export declare function createFilter(odataFilter: string): FilterFunction;
+export declare function createFilter(filter: string): any;
+export declare function createFilter(filter: Token): any;
 /**
  * Compiles a value returning function from an OData expression string
  * @param {string} odataExpression - An expression in OData expression format
@@ -30,4 +27,5 @@ export declare function createFilter(odataFilter: string): FilterFunction;
  * console.log(expression(item))
  * >> 39Chai
  */
-export declare function compileExpression(odataExpression: string): ExpressionFunction;
+export declare function compileExpression(expression: string): any;
+export declare function compileExpression(expression: Token): any;
