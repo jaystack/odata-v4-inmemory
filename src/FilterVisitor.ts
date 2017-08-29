@@ -195,6 +195,7 @@ export class FilterVisitor implements VisitorMap {
       //todo: check if string is actually a valid literal type
       case "string":
       case "Edm.String":
+      case "Edm.Guid":
         return decodeURIComponent(node.raw).replace(/'/g,'').replace(/\"/g,"");
       case "Edm.DateTimeOffset":
       case "Edm.Date":
