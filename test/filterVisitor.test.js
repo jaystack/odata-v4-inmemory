@@ -38,6 +38,10 @@ describe("inmemory visitor", () => {
       expect(f({A: 3, B: 4})).to.be.true
   })
 
+  it("expression 5.1.1.6.1: A eq 01234567-89ab-cdef-0123-456789abcdef", () => {
+      expect(f({A: '01234567-89ab-cdef-0123-456789abcdef'})).to.be.true;
+  });
+
   it('expression 5.1.1.6.2: ["a","b"]', () => {
       expect(e({A: 3, B: 4})).to.eql(['a','b'])
   })
