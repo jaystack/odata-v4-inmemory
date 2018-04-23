@@ -29,11 +29,11 @@
   },
   "homepage": "https://github.com/jaystack/odata-v4-inmemory#readme",
   "dependencies": {
-    "odata-v4-parser": "0.1.22"
+    "odata-v4-parser": "^0.1.29"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5",
-    "typescript": "^1.8.9"
+    "typescript": "^2.6.2"
   }
 }
