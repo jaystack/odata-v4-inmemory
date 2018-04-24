@@ -248,7 +248,10 @@ export class FilterVisitor implements VisitorMap {
 
   protected VisitODataIdentifier(node: Token, context: any) {
     if (node.value.name) {
-      return a => a[node.value.name]
+      return function (a) {
+        var value = a[node.value.name];
+        return value === undefined ? null : value;
+      };
     }
     const current = this.Visit(node.value.current, context)
     const next = this.Visit(node.value.next, context)
